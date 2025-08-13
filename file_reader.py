@@ -25,3 +25,12 @@ class file_reader:
             text += para.text + '\n'
         return text
     
+    def read_file(self):
+        if self.file_path.endswith('.txt'):
+            return self.read_text_file()
+        elif self.file_path.endswith('.pdf'):
+            return self.read_pdf_file()
+        elif self.file_path.endswith('.docx'):
+            return self.read_docx_file()
+        else:
+            raise ValueError("Unsupported file format")
